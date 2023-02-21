@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="026acb4a-d74c-428a-ae9b-6bd6176fc178" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/matrices/Matrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/matrices/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/matrices/Matrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vectors/threedimensional/Coordinate3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vectors/threedimensional/Coordinate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vectors/threedimensional/Vec3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vectors/threedimensional/Vec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vectors/twodimensional/Coordinate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vectors/twodimensional/Vec.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -2,68 +2,68 @@ package vectors.threedimensional;
 
 
 
-public class Vec3D {
-    private Coordinate3D startCoord, endCoord;
+public class Vec {
+    private Coordinate startCoord, endCoord;
 
-    public Vec3D(Coordinate3D start, Coordinate3D end) {
+    public Vec(Coordinate start, Coordinate end) {
         startCoord = start; endCoord = end;
     }
-    public Vec3D() {
-        startCoord = new Coordinate3D(0, 0, 0);
-        endCoord = new Coordinate3D(1, 1, 1);
+    public Vec() {
+        startCoord = new Coordinate(0, 0, 0);
+        endCoord = new Coordinate(1, 1, 1);
     }
 
     //nonstatic
-    public Coordinate3D getStart() {return startCoord;}
-    public Coordinate3D getEnd() {return endCoord;}
-    public void setStart(Coordinate3D i) {startCoord = i;}
-    public void setEnd(Coordinate3D i) {endCoord = i;}
+    public Coordinate getStart() {return startCoord;}
+    public Coordinate getEnd() {return endCoord;}
+    public void setStart(Coordinate i) {startCoord = i;}
+    public void setEnd(Coordinate i) {endCoord = i;}
     public double getDX() {return (endCoord.getX() - startCoord.getX());}
     public double getDY() {return (endCoord.getY() - startCoord.getY());}
     public double getDZ() {return (endCoord.getZ() - startCoord.getZ());}
-    public double getMagnitude() {return Coordinate3D.distanceBetween(startCoord, endCoord);}
-    public Vec3D getUnitVec() {
-        return Vec3D.div(this, this.getMagnitude());
+    public double getMagnitude() {return Coordinate.distanceBetween(startCoord, endCoord);}
+    public Vec getUnitVec() {
+        return Vec.div(this, this.getMagnitude());
     }
 
     //static
-    public static Vec3D add(Vec3D i, Vec3D i1) {
-        return new Vec3D(
-                i.getStart(), new Coordinate3D(
+    public static Vec add(Vec i, Vec i1) {
+        return new Vec(
+                i.getStart(), new Coordinate(
                         i.getStart().getX() + i.getDX() + i1.getDX(),
                         i.getStart().getY() + i.getDY() + i1.getDY(),
                         i.getStart().getZ() + i.getDZ() + i1.getDZ()
         ));
     }
-    public static Vec3D sub(Vec3D i, Vec3D i1) {
-        return new Vec3D(
-                i.getStart(), new Coordinate3D(
+    public static Vec sub(Vec i, Vec i1) {
+        return new Vec(
+                i.getStart(), new Coordinate(
                 i.getStart().getX() + i.getDX() - i1.getDX(),
                 i.getStart().getY() + i.getDY() - i1.getDY(),
                 i.getStart().getZ() + i.getDZ() - i1.getDZ()
         ));
     }
-    public static Vec3D mult(Vec3D v, double s) {
-        return new Vec3D(
-                v.getStart(), new Coordinate3D(
+    public static Vec mult(Vec v, double s) {
+        return new Vec(
+                v.getStart(), new Coordinate(
                 v.getEnd().getX() * s,
                 v.getEnd().getY() * s,
                 v.getEnd().getZ() * s
         ));
     }
-    public static Vec3D div(Vec3D v, double s) {
-        return new Vec3D(
-                v.getStart(), new Coordinate3D(
+    public static Vec div(Vec v, double s) {
+        return new Vec(
+                v.getStart(), new Coordinate(
                 v.getEnd().getX() / s,
                 v.getEnd().getY() / s,
                 v.getEnd().getZ() / s
         ));
     }
-    public static double dotProduct(Vec3D i, Vec3D i1) {
+    public static double dotProduct(Vec i, Vec i1) {
         return (i.getDX() * i1.getDX() + i.getDY() * i1.getDY() + i.getDZ() + i1.getDZ());
     }
-    public static Vec3D crossProduct(Vec3D i, Vec3D i1) {
-        return new Vec3D(i.getStart(), new Coordinate3D(
+    public static Vec crossProduct(Vec i, Vec i1) {
+        return new Vec(i.getStart(), new Coordinate(
                 i.getStart().getX() + i.getDX() * i1.getDZ() - i.getDZ() * i1.getDY(),
                 i.getStart().getY() + i.getDZ() * i1.getDX() - i.getDX() * i1.getDZ(),
                 i.getStart().getZ() + i.getDX() * i.getDY() - i.getDY() * i1.getDX()

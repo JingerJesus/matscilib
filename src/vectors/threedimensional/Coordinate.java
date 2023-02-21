@@ -1,14 +1,13 @@
 package vectors.threedimensional;
 
-import vectors.twodimensional.Coordinate;
 
-public class Coordinate3D extends Coordinate {
+public class Coordinate {
 
     double x, y, z;
-    public Coordinate3D(double i, double i1, double i2) {
+    public Coordinate(double i, double i1, double i2) {
         x = i; y = i1; z = i2;
     }
-    public Coordinate3D() {
+    public Coordinate() {
         x = 1; y = 1; z = 1;
     }
 
@@ -23,12 +22,13 @@ public class Coordinate3D extends Coordinate {
     //static
 
     public static double distanceBetween(Coordinate a, Coordinate b) {
-        double dy, dx;
+        double dx, dy, dz;
 
         dy = Math.abs(a.getY() - b.getY());
         dx = Math.abs(a.getX() - b.getX());
+        dz = Math.abs(a.getZ() - b.getZ());
 
-        return Math.sqrt(dy*dy + dx*dx);
+        return Math.sqrt(dy*dy + dx*dx + dz*dz);
 
     }
 
